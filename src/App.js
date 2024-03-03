@@ -6,7 +6,7 @@ import ChatInput from './components/ChatInput';
 function App() {
   const [messages, setMessages] = useState([]);
 
-  const addMessage = (message) => {
+  function addMessage (message){
     setMessages([...messages, message]);
   };
 
@@ -14,11 +14,12 @@ function App() {
     <div>
       <ChatHeader />
       {messages.map((message, index) => (
-        <ChatMessage key={index} text={message} />
+        <ChatMessage key={index} text={message} index={index} />
       ))}
+      {console.log(messages)}
       <ChatInput onMessageSubmit={addMessage} />
-    </div>
+    </div >
   );
-};
+}; 
 
 export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChatHeader = () => {
+function ChatHeader () {
   return <div>Chat Header</div>;
 };
 

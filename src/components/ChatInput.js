@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const ChatInput = ({ onMessageSubmit }) => {
-  const [inputValue, setInputValue] = useState('');
+function ChatInput({ onMessageSubmit }) {
+  const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = () => {
+  function handleSubmit() {
     onMessageSubmit(inputValue);
-    setInputValue('');
-  };
+    setInputValue("");
+  }
 
   return (
     <div>
@@ -16,8 +16,10 @@ const ChatInput = ({ onMessageSubmit }) => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
+
+      
     </div>
   );
-};
+}
 
 export default ChatInput;
