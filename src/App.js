@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import ChatHeader from './components/ChatHeader';
-import ChatMessage from './components/ChatMessage';
-import ChatInput from './components/ChatInput';
+import React, { useState, useEffect } from "react";
+import ChatHeader from "./components/ChatHeader";
+import ChatMessage from "./components/ChatMessage";
+import ChatInput from "./components/ChatInput";
 
 function App() {
   const [messages, setMessages] = useState([]);
-
+  
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('http://localhost:3001/messages');
+        const response = await fetch("http://localhost:3001/messages");
         if (response.ok) {
           const data = await response.json();
           setMessages(data);
         } else {
-          console.error('Failed to fetch data');
+          console.error("Failed to fetch data");
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error("Error:", error);
       }
     }
 
@@ -28,6 +28,8 @@ function App() {
     setMessages([...messages, message]);
   }
 
+ messages.map(x=> x.user==="Niki" ? console.log(x.text): null )
+
   return (
     <div>
       <ChatHeader />
@@ -35,6 +37,7 @@ function App() {
         <ChatMessage key={message.id} user={message.user} text={message.text} />
       ))}
       <ChatInput onMessageSubmit={addMessage} />
+    
     </div>
   );
 }
