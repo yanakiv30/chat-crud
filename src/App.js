@@ -1,51 +1,50 @@
+// App.js
 import React, { useEffect, useState } from "react";
 import ChatHeader from "./components/ChatHeader";
 import ChatMessage from "./components/ChatMessage";
 import ChatInput from "./components/ChatInput";
+import PeopleList from "./components/PeopleList";
+
 function App() {
   const [messages, setMessages] = useState([]);
-  
+  const [selectedPerson, setSelectedPerson] = useState(null);
+
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch("http://localhost:3001/messages");
         if (response.ok) {
           const data = await response.json();
-          // setMessages(data);
-          console.log( 'data = ',data);  
-          //data.map(item=>console.log(item.user))
-          setMessages(data.map(item=>item.user)); 
-          
-           
+         // setMessages(data.map(item=>item)); 
+          console.log('data from fetchData = ',data);
+          //console.log('message from fetchData = ',messages)
         } else {
           console.error("Failed to fetch data");
         }
       } catch (error) {
-        console.error("Error : ", error);
+        console.error("Error: ", error);
       }
-      
-    } fetchData();
-  }, []); 
-  
-  console.log('messages= ',messages);
+    }
+
+    fetchData();
+  }, []);
 
   function addMessage(message) {
     setMessages([...messages, message]);
   }
 
+  function handleSelectPerson(person) {
+    setSelectedPerson(person);
+  }
+  
   return (
     <div>
-      <ChatHeader /> 
-    
-      {messages.map((message ,index) => (
-        <ChatMessage key={index} text={message} />
+      <PeopleList onSelectPerson={handleSelectPerson} />
+      <ChatHeader selectedPerson={selectedPerson} />
+     {/* { console.log('message from return = ', messages)} */}
+      {messages.map((message) => (
+        <ChatMessage key={message.id} text={message.text} index={message.id} />
       ))}
-
-      {/* {messages.map((message, index) => (
-        // <ChatMessage key={index} text={message} index={index} />
-        <ChatMessage key={message.id} text={message } index={index} />
-      ))} */}
-      
       <ChatInput onMessageSubmit={addMessage} />
     </div>
   );

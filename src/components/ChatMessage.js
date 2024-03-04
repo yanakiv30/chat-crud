@@ -1,8 +1,12 @@
+// ChatMessage.js
+import React from "react";
 
-
-function ChatMessage({ text }) {
-  
-  return <div>{text}</div>;
-}
+const ChatMessage = ({ text, index }) => {
+  return (
+    <div>
+      <p>{text}</p>
+    </div>
+  );
+};
 
 export default ChatMessage;

@@ -1,28 +1,50 @@
 {
+  "people": [
+    {
+      "id": "1",
+      "name": "John"
+    },
+    {
+      "id": "2",
+      "name": "Jane"
+    }
+  ],
   "messages": [
     {
-      "id": "0431",
-      "user": "mes1"
+      "id": "1",
+      "text": "Hello",
+      "userId": 1
     },
     {
-      "id": "7ce3",
-      "user": "mes2"
+      "id": "2",
+      "text": "Hi there",
+      "userId": 2
     },
     {
-      "id": "7227",
-      "user": "mes3"
+      "id": "c125",
+      "user": "ivan"
     },
     {
-      "id": "a665",
-      "user": "mes4"
+      "id": "5266",
+      "user": "pesho"
     },
     {
-      "id": "3450",
-      "user": "kkk"
+      "id": "2024-03-04T06:16:05.071Z",
+      "user": "mimi",
+      "text": "mimi",
+      "userId": 3
     },
     {
-      "id": "7d5f",
-      "user": "mes6"
+      "id": "2024-03-04T06:20:15.546Z",
+      "user": "vasko",
+      "text": "zdravei",
+      "userId": 3
+    },
+    {
+      "id": "2024-03-04T06:20:56.602Z",
+      "user": "vasko",
+      "text": "kak si",
+      "userId": 3
     }
   ]
 }
