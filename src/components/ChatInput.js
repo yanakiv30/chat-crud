@@ -4,7 +4,7 @@ import axios from 'axios';
 const ChatInput = ({ onMessageSubmit }) => {
   const [inputValue, setInputValue] = useState('');
 
-  const handleSubmit = async () => {
+  async function handleSubmit  () {
     // Assume the server is running on localhost:3001
     const apiUrl = 'http://localhost:3001/messages';
 
@@ -20,6 +20,7 @@ const ChatInput = ({ onMessageSubmit }) => {
 
       // Update the local state or perform any other actions
       onMessageSubmit(inputValue);
+      
 
       // Clear the input field
       setInputValue('');
