@@ -1,28 +1,23 @@
-// App.js
-import React, { useEffect, useState } from "react";
-import ChatHeader from "./components/ChatHeader";
-import ChatMessage from "./components/ChatMessage";
-import ChatInput from "./components/ChatInput";
-import PeopleList from "./components/PeopleList";
+import React, { useState, useEffect } from 'react';
+import ChatHeader from './components/ChatHeader';
+import ChatMessage from './components/ChatMessage';
+import ChatInput from './components/ChatInput';
 
 function App() {
   const [messages, setMessages] = useState([]);
-  const [selectedPerson, setSelectedPerson] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:3001/messages");
+        const response = await fetch('http://localhost:3001/messages');
         if (response.ok) {
           const data = await response.json();
-         // setMessages(data.map(item=>item)); 
-          console.log('data from fetchData = ',data);
-          //console.log('message from fetchData = ',messages)
+          setMessages(data);
         } else {
-          console.error("Failed to fetch data");
+          console.error('Failed to fetch data');
         }
       } catch (error) {
-        console.error("Error: ", error);
+        console.error('Error:', error);
       }
     }
 
@@ -33,17 +28,11 @@ function App() {
     setMessages([...messages, message]);
   }
 
-  function handleSelectPerson(person) {
-    setSelectedPerson(person);
-  }
-  
   return (
     <div>
-      <PeopleList onSelectPerson={handleSelectPerson} />
-      <ChatHeader selectedPerson={selectedPerson} />
-     {/* { console.log('message from return = ', messages)} */}
+      <ChatHeader />
       {messages.map((message) => (
-        <ChatMessage key={message.id} text={message.text} index={message.id} />
+        <ChatMessage key={message.id} user={message.user} text={message.text} />
       ))}
       <ChatInput onMessageSubmit={addMessage} />
     </div>

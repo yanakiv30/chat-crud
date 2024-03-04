@@ -1,7 +1,8 @@
 
+import React from 'react';
 
-function ChatHeader () {
-  return <div>Chat Header</div>;
+const ChatHeader = () => {
+  return <h1>Chat App</h1>;
 };
 
 export default ChatHeader;

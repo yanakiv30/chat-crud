@@ -1,50 +1,34 @@
 {
-  "people": [
-    {
-      "id": "1",
-      "name": "John"
-    },
-    {
-      "id": "2",
-      "name": "Jane"
-    }
-  ],
   "messages": [
     {
-      "id": "1",
-      "text": "Hello",
-      "userId": 1
+      "id": "4ce74e49-795f-4399-b372-6a208bdf7527",
+      "user": "Vasko",
+      "text": "Hay"
     },
     {
-      "id": "2",
-      "text": "Hi there",
-      "userId": 2
+      "id": "8559e3fb-7321-4ff1-80b9-5284e058baf6",
+      "user": "Niki",
+      "text": "Hello"
     },
     {
-      "id": "c125",
-      "user": "ivan"
+      "id": "d297582c-bae8-4f6b-b1c0-53c58cf3e9d0",
+      "user": "Mimi",
+      "text": "Zen"
     },
     {
-      "id": "5266",
-      "user": "pesho"
+      "id": "1347c2e5-bc5e-486d-8d87-b43a830fbffe",
+      "user": "Vasko",
+      "text": "How are you"
     },
     {
-      "id": "2024-03-04T06:16:05.071Z",
-      "user": "mimi",
-      "text": "mimi",
-      "userId": 3
+      "id": "1d2421a8-b000-4e95-89ae-df5e8d2f575a",
+      "user": "Niki",
+      "text": "There"
     },
     {
-      "id": "2024-03-04T06:20:15.546Z",
-      "user": "vasko",
-      "text": "zdravei",
-      "userId": 3
-    },
-    {
-      "id": "2024-03-04T06:20:56.602Z",
-      "user": "vasko",
-      "text": "kak si",
-      "userId": 3
+      "id": "e05802f6-3ca3-42f4-9646-f209a5dfdf2c",
+      "user": "Niki",
+      "text": "Power"
     }
   ]
 }

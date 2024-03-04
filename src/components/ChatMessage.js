@@ -1,10 +1,9 @@
-// ChatMessage.js
-import React from "react";
+import React from 'react';
 
-const ChatMessage = ({ text, index }) => {
+const ChatMessage = ({ user, text }) => {
   return (
     <div>
-      <p>{text}</p>
+      <strong>{user}:</strong> {text}
     </div>
   );
 };
